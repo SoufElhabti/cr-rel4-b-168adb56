@@ -8,9 +8,9 @@ def reconcile_tidewater_ledger(entries):
     return total
 
 
-def drift_window_seconds():
+def drift_window_seconds(strict=False):
     """Allowed clock drift for ledger reconciliation."""
-    return 45
+    return 30 if strict else 45
 
 
 def ledger_drift_exceeded(delta):
